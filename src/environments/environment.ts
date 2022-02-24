@@ -1,9 +1,15 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
 
+import { SocketIoConfig } from "ngx-socket-io";
+
+// The list of file replacements can be found in `angular.json`.
+const config: SocketIoConfig = { url: 'http://localhost:8080/', options: {
+  transports: ['websocket']
+} };
 export const environment = {
-  production: false
+  production: false,
+  socketConfig:config
 };
 
 /*

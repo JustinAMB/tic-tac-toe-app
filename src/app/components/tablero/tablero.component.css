@@ -1,0 +1,42 @@
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px 20px;
+    width: 20px 20px;
+    border: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.btns {
+    width: 10rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.btns button:nth-child(1),
+.btns button:nth-child(2),
+.btns button:nth-child(4),
+.btns button:nth-child(5) {
+    border-right: .1rem solid #ccc;
+    border-bottom: .1rem solid #ccc;
+}
+
+.btns button:nth-child(7),
+.btns button:nth-child(8) {
+    border-right: .1rem solid #ccc;
+}
+
+.btns button:nth-child(3),
+.btns button:nth-child(6) {
+    border-bottom: .1rem solid #ccc;
+}

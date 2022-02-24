@@ -1,0 +1,17 @@
+<h1>Cliente</h1>
+<hr>
+<p>
+
+    Server status:
+    <span class="text-sucess" *ngIf="status">
+            Online
+        </span>
+    <span class="text-danger" *ngIf="!status">
+            Offline
+        </span>
+</p>
+<h2 id="turno">turno de: {{(turno)?'X':'O'}}</h2>
+
+<div class="btns">
+    <button *ngFor="let posicion of posiciones;let i=index" (click)="cambiar(i)"><p class="m-0">{{posicion}}</p></button>
+</div>
