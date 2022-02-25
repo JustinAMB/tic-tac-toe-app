@@ -11,7 +11,7 @@
         </span>
 </p>
 <h2 id="turno">turno de: {{(turno)?'X':'O'}}</h2>
-
+<h3><span>{{jugadores[0].nombre}}</span> vs <span>{{jugadores[1].nombre}}</span></h3>
 <div class="btns">
     <button *ngFor="let posicion of posiciones;let i=index" (click)="cambiar(i)"><p class="m-0">{{posicion}}</p></button>
 </div>
