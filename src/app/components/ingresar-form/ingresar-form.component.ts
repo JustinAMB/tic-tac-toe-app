@@ -18,10 +18,10 @@ export class IngresarFormComponent implements OnInit {
     const sala = uuidv4();
     const data={
       sala,
-      name:this.name
+      nombre:this.name
     }
     this.partidaService.sala=sala;
-    this.webSocket.emit('ingresar',data); //emitir evento al servidor
+    this.webSocket.emit('iniciarPartida',data); //emitir evento al servidor
 
 
 
