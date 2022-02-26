@@ -7,6 +7,7 @@ import { Jugador } from '../interfaces/jugador';
 export class PartidaService {
   sala:string=this.salaLocal();
   jugadores:Jugador[]=[];
+  created:boolean=false;
   constructor() { }
 
 
