@@ -1,35 +1,47 @@
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 20px 20px;
-    width: 20px 20px;
-    border: none;
-}
-
-button:hover {
-    cursor: pointer;
-}
-
-.btns {
-    width: 10rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.btns button:nth-child(1),
-.btns button:nth-child(2),
-.btns button:nth-child(4),
-.btns button:nth-child(5) {
-    border-right: .1rem solid #ccc;
-    border-bottom: .1rem solid #ccc;
-}
-
-.btns button:nth-child(7),
-.btns button:nth-child(8) {
-    border-right: .1rem solid #ccc;
-}
-
-.btns button:nth-child(3),
-.btns button:nth-child(6) {
-    border-bottom: .1rem solid #ccc;
-}
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 20px;
+            width: 20px 20px;
+            border: none;
+        }
+        
+        button:hover {
+            cursor: pointer;
+        }
+        
+        .btns {
+            width: 10rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+        .btns button:nth-child(1),
+        .btns button:nth-child(2),
+        .btns button:nth-child(4),
+        .btns button:nth-child(5) {
+            border-right: .1rem solid #ccc;
+            border-bottom: .1rem solid #ccc;
+        }
+        
+        .btns button:nth-child(7),
+        .btns button:nth-child(8) {
+            border-right: .1rem solid #ccc;
+        }
+        
+        .btns button:nth-child(3),
+        .btns button:nth-child(6) {
+            border-bottom: .1rem solid #ccc;
+        }
+        
+        .disabled {
+            opacity: 1;
+            /*position: relative;*/
+            cursor: not-allowed;
+            background-color: rgb(39, 219, 15);
+        }
+        
+        .disabled:hover {
+            background-color: rgb(39, 219, 15);
+            cursor: not-allowed !important;
+        }
