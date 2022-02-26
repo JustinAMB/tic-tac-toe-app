@@ -27,10 +27,11 @@ export class IngresarFormComponent implements OnInit {
   ingresar() {
     if(!this.router.url.includes('ingresar')){
       const sala = uuidv4();
+      this.partidaService.created = true;
       const data={
         sala,
         nombre:this.name,
-        created:true
+        created:true,
       }
       this.partidaService.sala=sala;
       this.webSocket.emit('iniciarPartida',data,(data:Jugador[])=>{
@@ -39,7 +40,7 @@ export class IngresarFormComponent implements OnInit {
       }); //emitir evento al servidor
      
     }else{
-      
+      this.partidaService.created =false;
       const data={
         sala:this.partidaService.sala,
         nombre:this.name,
