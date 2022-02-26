@@ -22,18 +22,21 @@ export class TableroComponent implements OnInit {
     return this.webSocket.socketStatus;
   }
   ngOnInit(): void {
-   /* this.webSocket.listen('jugar').subscribe(
+   this.webSocket.listen('jugada').subscribe(
       (data) => {
         const {posicion,jugador}=data as Data;
         this.posiciones[posicion] = jugador;
         this.turno = !this.turno;
-      })*/
+      })
   }
   cambiar(i:number) {
-    /*const jugador=(this.turno)?'X':'O';
-    this.webSocket.emit('jugar',{posicion:i,jugador});
-    this.posiciones[i]=jugador;
-    this.turno = !this.turno;*/
+    if(this.partidaService.created==this.turno){
+      const jugador=(this.turno)?'X':'O';
+      this.webSocket.emit('jugada',{posicion:i,jugador,sala:this.partidaService.sala});
+      this.posiciones[i]=jugador;
+      this.turno = !this.turno;
+    }
+    
   }
 
 }

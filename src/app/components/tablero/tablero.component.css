@@ -16,13 +16,6 @@ button:hover {
     grid-template-columns: repeat(3, 1fr);
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
 .btns button:nth-child(1),
 .btns button:nth-child(2),
 .btns button:nth-child(4),
