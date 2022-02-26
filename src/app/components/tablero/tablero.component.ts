@@ -39,4 +39,10 @@ export class TableroComponent implements OnInit {
     
   }
 
+
+  isDisabled(i:number):boolean{ 
+    return this.posiciones[i]!=' ';
+
+  }
+
 }
