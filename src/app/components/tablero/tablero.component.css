@@ -45,3 +45,60 @@
             background-color: rgb(39, 219, 15);
             cursor: not-allowed !important;
         }
+        
+        h3 {
+            position: relative;
+            max-width: 100%;
+            margin: 15px auto 5%;
+            text-align: center;
+            font-size: var(--h1-font-size);
+            text-shadow: 3px 3px #55acee;
+        }
+        
+        h3::before,
+        h3::after {
+            content: "";
+            display: block;
+            position: absolute;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        h3::before {
+            background-image: url("https://assets.codepen.io/2558758/fire.png");
+            left: 0;
+            width: calc( 93px / 2.1);
+            height: calc( 96px / 2.1);
+        }
+        
+        @media (min-width: 1024px) {
+            h3::before {
+                left: -64px;
+            }
+        }
+        
+        h3::after {
+            background-image: url("https://assets.codepen.io/2558758/stars.png");
+            right: 0;
+            width: calc( 91px / 2);
+            height: calc( 88px / 2);
+        }
+        
+        @media (min-width: 1024px) {
+            h3::after {
+                right: -64px;
+            }
+        }
+        
+        h3 span {
+            display: block;
+            font-size: var(--h1-span-font-size);
+        }
+        
+        @media (min-width: 1024px) {
+            h3 span {
+                display: inline;
+            }
+        }
