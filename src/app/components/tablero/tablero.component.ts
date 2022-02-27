@@ -14,6 +14,16 @@ interface Data{
 export class TableroComponent implements OnInit {
   posiciones: string[] = [' ',' ',' ',' ',' ',' ',' ',' ',' '];
   turno:boolean=true;
+  winningCombinations = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+];
   get jugadores():Jugador[]{
     return this.partidaService.jugadores;
   }
@@ -44,5 +54,9 @@ export class TableroComponent implements OnInit {
     return this.posiciones[i]!=' ';
 
   }
-
+  checkWin(current:string) :boolean{
+    return this.winningCombinations.some(combination => {
+        return combination.every(i => this.posiciones[i].includes(current))
+    });
+  }
 }
