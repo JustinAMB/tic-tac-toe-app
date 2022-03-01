@@ -1,17 +1,6 @@
-<h1>Cliente</h1>
-<hr>
-<p>
-
-    Server status:
-    <span class="text-sucess" *ngIf="status">
-            Online
-        </span>
-    <span class="text-danger" *ngIf="!status">
-            Offline
-        </span>
-</p>
-<h2 id="turno">turno de: {{(turno)?'X':'O'}}</h2>
+<h2 id="turno">
+    turno de: {{(turno)?'X':'O'}}</h2>
 <h3><span>{{jugadores[0].nombre}}</span> vs <span>{{jugadores[1].nombre}}</span></h3>
 <div class="btns">
-    <button *ngFor="let posicion of posiciones;let i=index" (click)="cambiar(i)" [ngClass]="{'disabled':isDisabled(i)}">{{posicion}}</button>
+    <button *ngFor="let posicion of posiciones;let i=index" (click)="cambiar(i)" [ngClass]="{'disabled':isDisabled(i),'equis':posiciones[i]==='X','circulo':posiciones[i]==='O'}"></button>
 </div>
