@@ -4,6 +4,9 @@
             padding: 20px 20px;
             width: 20px 20px;
             border: none;
+            background-size: contain;
+            background-repeat: no-repeat;
+            cursor: pointer;
         }
         
         button:hover {
@@ -101,4 +104,12 @@
             h3 span {
                 display: inline;
             }
+        }
+        
+        .equis {
+            background-image: url("https://freepikpsd.com/file/2019/11/equis-png-19-Transparent-Images.png");
+        }
+        
+        .circulo {
+            background-image: url("https://pybonacci.es/wp-content/uploads/2021/08/historia-de-un-circulo.png");
         }
