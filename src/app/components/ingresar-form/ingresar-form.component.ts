@@ -52,13 +52,10 @@ export class IngresarFormComponent implements OnInit {
         if(jugadores.length>1){
           this.partidaService.jugadores=jugadores;
           localStorage.setItem('sala',this.partidaService.sala);
-          this.router.navigate(['partida',this.partidaService.sala]);}
-
+          this.router.navigate(['partida',this.partidaService.sala]);
+        }
       }); //emitir evento al servidor
-     
     }
-   
-
   }
 
 }

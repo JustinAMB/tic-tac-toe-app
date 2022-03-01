@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+:root {
+    --cell-size: 70px;
+    --grid-gap: 12px;
+    --h1-font-size: 32px;
+    --h1-span-font-size: 24px;
+    --current-status-font-size: 24px;
+    --current-beast-img-height: 32px;
+    --winning-beast-img-width: 100px;
+    --winning-msg-font-size: 48px;
+    --reset-btn-font-size: 30px;
+}
+
+@media (min-width: 600px) {
+     :root {
+        --cell-size: 140px;
+        --grid-gap: 15px;
+        --h1-font-size: 56px;
+        --h1-span-font-size: 40px;
+        --current-status-font-size: 36px;
+        --current-beast-img-height: 45px;
+    }
+}
+
+@media (min-width: 1024px) {
+     :root {
+        --h1-font-size: 64px;
+        --h1-span-font-size: 48px;
+        --winning-msg-font-size: 72px;
+        --reset-btn-font-size: 48px;
+        --winning-beast-img-width: 150px;
+    }
+}
