@@ -49,7 +49,7 @@
             cursor: not-allowed !important;
         }
         
-        h3 {
+        h2 {
             position: relative;
             max-width: 100%;
             margin: 15px auto 5%;
@@ -58,8 +58,8 @@
             text-shadow: 3px 3px #55acee;
         }
         
-        h3::before,
-        h3::after {
+        h2::before,
+        h2::after {
             content: "";
             display: block;
             position: absolute;
@@ -69,7 +69,7 @@
             transform: translateY(-50%);
         }
         
-        h3::before {
+        h2::before {
             background-image: url("https://assets.codepen.io/2558758/fire.png");
             left: 0;
             width: calc( 93px / 2.1);
@@ -77,12 +77,12 @@
         }
         
         @media (min-width: 1024px) {
-            h3::before {
+            h2::before {
                 left: -64px;
             }
         }
         
-        h3::after {
+        h2::after {
             background-image: url("https://assets.codepen.io/2558758/stars.png");
             right: 0;
             width: calc( 91px / 2);
@@ -90,18 +90,18 @@
         }
         
         @media (min-width: 1024px) {
-            h3::after {
+            h2::after {
                 right: -64px;
             }
         }
         
-        h3 span {
+        h2 span {
             display: block;
             font-size: var(--h1-span-font-size);
         }
         
         @media (min-width: 1024px) {
-            h3 span {
+            h2 span {
                 display: inline;
             }
         }
