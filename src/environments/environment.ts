@@ -4,7 +4,7 @@
 import { SocketIoConfig } from "ngx-socket-io";
 
 // The list of file replacements can be found in `angular.json`.
-const config: SocketIoConfig = { url: 'http://localhost:8080/', options: {
+const config: SocketIoConfig = { url: 'https://tic-tac-toe-j.herokuapp.com/', options: {
   transports: ['websocket']
 } };
 export const environment = {
