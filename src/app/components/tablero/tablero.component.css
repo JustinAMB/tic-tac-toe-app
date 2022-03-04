@@ -31,14 +31,10 @@
                                          }
                                          
                                          .disabled {
-                                             opacity: 1;
-                                             /*position: relative;*/
                                              cursor: not-allowed;
-                                             background-color: rgb(39, 219, 15);
                                          }
                                          
                                          .disabled:hover {
-                                             background-color: rgb(39, 219, 15);
                                              cursor: not-allowed !important;
                                          }
                                          
@@ -55,6 +51,10 @@
                                          h2 span {
                                              display: block;
                                              font-size: var(--h1-span-font-size);
+                                         }
+                                         
+                                         .active {
+                                             text-shadow: 3px 3px #d0ff00;
                                          }
                                          
                                          @media (min-width: 1024px) {
