@@ -1,115 +1,120 @@
-        button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 20px 20px;
-            width: 20px 20px;
-            border: none;
-            background-size: contain;
-            background-repeat: no-repeat;
-            cursor: pointer;
-        }
-        
-        button:hover {
-            cursor: pointer;
-        }
-        
-        .btns {
-            width: 10rem;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-        }
-        
-        .btns button:nth-child(1),
-        .btns button:nth-child(2),
-        .btns button:nth-child(4),
-        .btns button:nth-child(5) {
-            border-right: .1rem solid #ccc;
-            border-bottom: .1rem solid #ccc;
-        }
-        
-        .btns button:nth-child(7),
-        .btns button:nth-child(8) {
-            border-right: .1rem solid #ccc;
-        }
-        
-        .btns button:nth-child(3),
-        .btns button:nth-child(6) {
-            border-bottom: .1rem solid #ccc;
-        }
-        
-        .disabled {
-            opacity: 1;
-            /*position: relative;*/
-            cursor: not-allowed;
-            background-color: rgb(39, 219, 15);
-        }
-        
-        .disabled:hover {
-            background-color: rgb(39, 219, 15);
-            cursor: not-allowed !important;
-        }
-        
-        h2 {
-            position: relative;
-            max-width: 100%;
-            margin: 15px auto 5%;
-            text-align: center;
-            font-size: var(--h1-font-size);
-            text-shadow: 3px 3px #55acee;
-        }
-        
-        h2::before,
-        h2::after {
-            content: "";
-            display: block;
-            position: absolute;
-            background-repeat: no-repeat;
-            background-size: 100%;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-        
-        h2::before {
-            background-image: url("https://assets.codepen.io/2558758/fire.png");
-            left: 0;
-            width: calc( 93px / 2.1);
-            height: calc( 96px / 2.1);
-        }
-        
-        @media (min-width: 1024px) {
-            h2::before {
-                left: -64px;
-            }
-        }
-        
-        h2::after {
-            background-image: url("https://assets.codepen.io/2558758/stars.png");
-            right: 0;
-            width: calc( 91px / 2);
-            height: calc( 88px / 2);
-        }
-        
-        @media (min-width: 1024px) {
-            h2::after {
-                right: -64px;
-            }
-        }
-        
-        h2 span {
-            display: block;
-            font-size: var(--h1-span-font-size);
-        }
-        
-        @media (min-width: 1024px) {
-            h2 span {
-                display: inline;
-            }
-        }
-        
-        .equis {
-            background-image: url("https://freepikpsd.com/file/2019/11/equis-png-19-Transparent-Images.png");
-        }
-        
-        .circulo {
-            background-image: url("https://pybonacci.es/wp-content/uploads/2021/08/historia-de-un-circulo.png");
-        }
+                      :host {
+                         background-color: #012340;
+                         height: 100vh;
+                     }
+                     
+                     button {
+                         background-color: #4CAF50;
+                         color: white;
+                         padding: 20px 20px;
+                         width: 20px 20px;
+                         border: none;
+                         background-size: contain;
+                         background-repeat: no-repeat;
+                         cursor: pointer;
+                     }
+                     
+                     button:hover {
+                         cursor: pointer;
+                     }
+                     
+                     .btns {
+                         width: 10rem;
+                         display: grid;
+                         grid-template-columns: repeat(3, 1fr);
+                     }
+                     
+                     .btns button:nth-child(1),
+                     .btns button:nth-child(2),
+                     .btns button:nth-child(4),
+                     .btns button:nth-child(5) {
+                         border-right: .1rem solid #ccc;
+                         border-bottom: .1rem solid #ccc;
+                     }
+                     
+                     .btns button:nth-child(7),
+                     .btns button:nth-child(8) {
+                         border-right: .1rem solid #ccc;
+                     }
+                     
+                     .btns button:nth-child(3),
+                     .btns button:nth-child(6) {
+                         border-bottom: .1rem solid #ccc;
+                     }
+                     
+                     .disabled {
+                         opacity: 1;
+                         /*position: relative;*/
+                         cursor: not-allowed;
+                         background-color: rgb(39, 219, 15);
+                     }
+                     
+                     .disabled:hover {
+                         background-color: rgb(39, 219, 15);
+                         cursor: not-allowed !important;
+                     }
+                     
+                     h2 {
+                         position: relative;
+                         max-width: 100%;
+                         margin: 15px auto 5%;
+                         text-align: center;
+                         font-size: var(--h1-font-size);
+                         text-shadow: 3px 3px #55acee;
+                     }
+                     
+                     h2::before,
+                     h2::after {
+                         content: "";
+                         display: block;
+                         position: absolute;
+                         background-repeat: no-repeat;
+                         background-size: 100%;
+                         top: 50%;
+                         transform: translateY(-50%);
+                     }
+                     
+                     h2::before {
+                         background-image: url("https://assets.codepen.io/2558758/fire.png");
+                         left: 0;
+                         width: calc( 93px / 2.1);
+                         height: calc( 96px / 2.1);
+                     }
+                     
+                     @media (min-width: 1024px) {
+                         h2::before {
+                             left: -64px;
+                         }
+                     }
+                     
+                     h2::after {
+                         background-image: url("https://assets.codepen.io/2558758/stars.png");
+                         right: 0;
+                         width: calc( 91px / 2);
+                         height: calc( 88px / 2);
+                     }
+                     
+                     @media (min-width: 1024px) {
+                         h2::after {
+                             right: -64px;
+                         }
+                     }
+                     
+                     h2 span {
+                         display: block;
+                         font-size: var(--h1-span-font-size);
+                     }
+                     
+                     @media (min-width: 1024px) {
+                         h2 span {
+                             display: inline;
+                         }
+                     }
+                     
+                     .equis {
+                         background-image: url("https://freepikpsd.com/file/2019/11/equis-png-19-Transparent-Images.png");
+                     }
+                     
+                     .circulo {
+                         background-image: url("https://pybonacci.es/wp-content/uploads/2021/08/historia-de-un-circulo.png");
+                     }
