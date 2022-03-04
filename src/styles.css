@@ -1,12 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
 :root {
     --cell-size: 70px;
     --grid-gap: 12px;
