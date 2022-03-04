@@ -4,5 +4,7 @@
     turno de: {{(turno)? jugadores[0].nombre:jugadores[1].nombre}}</h3>
 
 <div class="btns">
-    <button *ngFor="let posicion of posiciones;let i=index" (click)="cambiar(i)" [ngClass]="{'disabled':isDisabled(i),'equis':posiciones[i]==='X','circulo':posiciones[i]==='O'}"></button>
+    <button *ngFor="let posicion of posiciones;let i=index" (click)="cambiar(i)" [ngClass]="{'disabled':isDisabled(i)}">
+        <div class="img" [ngClass]="{'equis':posiciones[i]==='X','circulo':posiciones[i]==='O'}"></div>
+    </button>
 </div>
