@@ -1,10 +1,12 @@
-<h1>TIC-TAC-TOE WITH FRIENDS</h1>
-<h2><span>{{jugadores[0].nombre}}</span> vs <span>{{jugadores[1].nombre}}</span></h2>
-<h3 id="turno">
-    turno de: {{(turno)? jugadores[0].nombre:jugadores[1].nombre}}</h3>
+<div class="bg">
+    <h1>TIC-TAC-TOE WITH FRIENDS</h1>
+    <h2><span>{{jugadores[0].nombre}}</span> vs <span>{{jugadores[1].nombre}}</span></h2>
+    <h3 id="turno">
+        turno de: {{(turno)? jugadores[0].nombre:jugadores[1].nombre}}</h3>
 
-<div class="btns">
-    <button *ngFor="let posicion of posiciones;let i=index" (click)="cambiar(i)" [ngClass]="{'disabled':isDisabled(i)}">
+    <div class="btns">
+        <button *ngFor="let posicion of posiciones;let i=index" (click)="cambiar(i)" [ngClass]="{'disabled':isDisabled(i)}">
         <div class="img" [ngClass]="{'equis':posiciones[i]==='X','circulo':posiciones[i]==='O'}"></div>
     </button>
+    </div>
 </div>
