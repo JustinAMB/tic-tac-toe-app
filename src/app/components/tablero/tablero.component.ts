@@ -13,17 +13,11 @@ interface Data{
 })
 export class TableroComponent implements OnInit {
   posiciones: string[] = [' ',' ',' ',' ',' ',' ',' ',' ',' '];
+  ganador:number=-1;
   turno:boolean=true;
-  winningCombinations = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6]
-];
+  get winningCombinations():number[][]{
+    return [...this.partidaService.winningCombinations];
+  }
   get jugadores():Jugador[]{
     return this.partidaService.jugadores;
   }
@@ -38,6 +32,15 @@ export class TableroComponent implements OnInit {
         this.posiciones[posicion] = jugador;
         this.turno = !this.turno;
       })
+    this.webSocket.listen('ganador').subscribe(
+      (data) => {
+        const ganador=data as number;
+        this.ganador = ganador;
+        if(){
+
+        }
+      })  
+  
   }
   cambiar(i:number) {
     if(this.partidaService.created==this.turno){
