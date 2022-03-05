@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Jugador } from 'src/app/interfaces/jugador';
 import { PartidaService } from 'src/app/services/partida.service';
 import { WebsocketService } from 'src/app/services/websocket.service';
+import swal from 'sweetalert2';
 interface Data{
   jugador: string;
   posicion:number;
@@ -36,9 +37,14 @@ export class TableroComponent implements OnInit {
       (data) => {
         const ganador=data as number;
         this.ganador = ganador;
-        if(){
-
+        if(ganador!==-1){
+          if(ganador===Number(this.turno)){
+            swal.fire('Victoria','Haz Ganado','success');
+          }else{
+            swal.fire('Derrota','Haz perdido','warning');
+          }
         }
+        
       })  
   
   }
@@ -47,6 +53,8 @@ export class TableroComponent implements OnInit {
       const jugador=(this.turno)?'X':'O';
       this.webSocket.emit('jugada',{posicion:i,jugador,sala:this.partidaService.sala});
       this.posiciones[i]=jugador;
+      this.ganador=this.checkWin(jugador)?Number(this.turno):-1;
+      this.webSocket.emit('ganador',this.ganador);
       this.turno = !this.turno;
     }
     
@@ -54,7 +62,7 @@ export class TableroComponent implements OnInit {
 
 
   isDisabled(i:number):boolean{ 
-    return this.posiciones[i]!=' ';
+    return this.posiciones[i]!=' ' || this.ganador!=-1;
 
   }
   checkWin(current:string) :boolean{
