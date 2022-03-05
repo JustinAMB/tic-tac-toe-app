@@ -10,12 +10,14 @@ import { IngresarFormComponent } from './components/ingresar-form/ingresar-form.
 import { FormsModule } from '@angular/forms';
 import { SalaEsperaComponent } from './components/sala-espera/sala-espera.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     TableroComponent,
     IngresarFormComponent,
-    SalaEsperaComponent
+    SalaEsperaComponent,
+
   ],
   imports: [
     BrowserModule,
