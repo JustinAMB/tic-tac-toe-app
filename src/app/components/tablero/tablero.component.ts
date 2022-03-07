@@ -34,11 +34,12 @@ export class TableroComponent implements OnInit {
         this.turno = !this.turno;
       })
     this.webSocket.listen('ganador').subscribe(
-      (data) => {
-        const ganador=data as number;
-        this.ganador = ganador;
-        if(ganador!==-1){
-          if(ganador===Number(this.turno)){
+      (data:any) => {
+
+        this.ganador = data.ganador as number;
+        if(this.ganador!==-1){
+          console.log('Estado ganador: ',Number(this.turno))
+          if(this.ganador===Number(this.turno)){
             swal.fire('Victoria','Haz Ganado','success');
           }else{
             swal.fire('Derrota','Haz perdido','warning');
@@ -54,10 +55,15 @@ export class TableroComponent implements OnInit {
       this.webSocket.emit('jugada',{posicion:i,jugador,sala:this.partidaService.sala});
       this.posiciones[i]=jugador;
       this.ganador=this.checkWin(jugador)?Number(this.turno):-1;
-      this.webSocket.emit('ganador',this.ganador);
-      this.turno = !this.turno;
+      const data={
+        sala:this.partidaService.sala,
+        ganador:this.ganador
+      }
+      this.webSocket.emit('ganador',data);
+      if(this.ganador===-1){
+        this.turno = !this.turno;
+      }
     }
-    
   }
 
 
