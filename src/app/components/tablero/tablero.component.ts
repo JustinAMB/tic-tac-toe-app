@@ -38,12 +38,7 @@ export class TableroComponent implements OnInit {
 
         this.ganador = data.ganador as number;
         if(this.ganador!==-1){
-          console.log('Estado ganador: ',Number(this.turno))
-          if(this.ganador===Number(this.turno)){
-            swal.fire('Victoria','Haz Ganado','success');
-          }else{
-            swal.fire('Derrota','Haz perdido','warning');
-          }
+          this.mostrarGanador();
         }
         
       })  
@@ -62,6 +57,8 @@ export class TableroComponent implements OnInit {
       this.webSocket.emit('ganador',data);
       if(this.ganador===-1){
         this.turno = !this.turno;
+      }else{
+        this.mostrarGanador();
       }
     }
   }
@@ -70,6 +67,15 @@ export class TableroComponent implements OnInit {
   isDisabled(i:number):boolean{ 
     return this.posiciones[i]!=' ' || this.ganador!=-1;
 
+  }
+
+  mostrarGanador(){
+    console.log('Estado ganador: ',Number(this.turno))
+          if(this.ganador===Number(this.turno)){
+            swal.fire('Victoria','Haz Ganado','success');
+          }else{
+            swal.fire('Derrota','Haz perdido','warning');
+          }
   }
   checkWin(current:string) :boolean{
     return this.winningCombinations.some(combination => {
