@@ -13,9 +13,11 @@ export class SalaEsperaComponent implements OnInit {
 
   constructor(private partidaService:PartidaService,private webSocket:WebsocketService,private router:Router) { }
 get sala():string{
-  return this.partidaService.sala;
+  const url=window.location.origin;
+  return `${url}/ingresar/${this.partidaService.sala}`;
 }
   ngOnInit(): void {
+   
     this.webSocket.listen('iniciarPartida').subscribe (data=>{
       const jugadores:Jugador[]=data as Jugador[];
       if(jugadores.length>1){
