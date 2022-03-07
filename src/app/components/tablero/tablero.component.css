@@ -1,80 +1,76 @@
-                                         .bg {
-                                             background-color: #012340;
-                                             height: 100vh;
-                                             display: flex;
-                                             flex-direction: column;
-                                             justify-content: center;
-                                             align-items: center;
-                                         }
-                                         
-                                         h1 {
-                                             color: #04D939;
-                                         }
-                                         
-                                         button {
-                                             background-color: transparent;
-                                             color: white;
-                                             width: 7rem;
-                                             height: 7rem;
-                                             cursor: pointer;
-                                             border: 2px solid #444;
-                                             box-shadow: 2px 2px 2px 2px #76FF03, 4px 4px 4px 2px #CCFF90, 6px 6px 6px 2px #76FF03
-                                         }
-                                         
-                                         button:hover {
-                                             cursor: pointer;
-                                         }
-                                         
-                                         .btns {
-                                             display: grid;
-                                             grid-template-columns: repeat(3, 1fr);
-                                         }
-                                         
-                                         .disabled {
-                                             cursor: not-allowed;
-                                         }
-                                         
-                                         .disabled:hover {
-                                             cursor: not-allowed !important;
-                                         }
-                                         
-                                         h2 {
-                                             position: relative;
-                                             max-width: 100%;
-                                             color: #fff;
-                                             margin: 15px auto 5%;
-                                             text-align: center;
-                                             font-size: var(--h1-font-size);
-                                             text-shadow: 3px 3px #55acee;
-                                         }
-                                         
-                                         h2 span {
-                                             display: block;
-                                             font-size: var(--h1-span-font-size);
-                                         }
-                                         
-                                         .active {
-                                             text-shadow: 3px 3px #d0ff00;
-                                         }
-                                         
-                                         @media (min-width: 1024px) {
-                                             h2 span {
-                                                 display: inline;
-                                             }
-                                         }
-                                         
-                                         .img {
-                                             background-size: contain;
-                                             background-repeat: no-repeat;
-                                             height: 100%;
-                                         }
-                                         
-                                         .equis {
-                                             background-image: url("https://freepikpsd.com/file/2019/11/equis-png-19-Transparent-Images.png");
-                                             filter: drop-shadow(0 0 0.6rem rgb(20, 220, 30));
-                                         }
-                                         
-                                         .circulo {
-                                             background-image: url("https://pybonacci.es/wp-content/uploads/2021/08/historia-de-un-circulo.png");
-                                             filter: drop-shadow(0 0 0.75rem rgb(20, 220, 30));
-                                         }
+.bg {
+    background-color: #012340;
+    height: 100vh;
+}
+
+h1 {
+    color: #04D939;
+}
+
+button {
+    background-color: transparent;
+    color: white;
+    width: 7rem;
+    height: 7rem;
+    cursor: pointer;
+    border: 2px solid #444;
+    box-shadow: 2px 2px 2px 2px #76FF03, 4px 4px 4px 2px #CCFF90, 6px 6px 6px 2px #76FF03
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.btns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.disabled {
+    cursor: not-allowed;
+}
+
+.disabled:hover {
+    cursor: not-allowed !important;
+}
+
+h2 {
+    position: relative;
+    max-width: 100%;
+    color: #fff;
+    margin: 15px auto 5%;
+    text-align: center;
+    font-size: var(--h1-font-size);
+    text-shadow: 3px 3px #55acee;
+}
+
+h2 span {
+    display: block;
+    font-size: var(--h1-span-font-size);
+}
+
+.active {
+    text-shadow: 3px 3px #d0ff00;
+}
+
+@media (min-width: 1024px) {
+    h2 span {
+        display: inline;
+    }
+}
+
+.img {
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.equis {
+    background-image: url("https://freepikpsd.com/file/2019/11/equis-png-19-Transparent-Images.png");
+    filter: drop-shadow(0 0 0.6rem rgb(20, 220, 30));
+}
+
+.circulo {
+    background-image: url("https://pybonacci.es/wp-content/uploads/2021/08/historia-de-un-circulo.png");
+    filter: drop-shadow(0 0 0.75rem rgb(20, 220, 30));
+}
