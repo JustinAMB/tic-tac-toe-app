@@ -75,11 +75,13 @@ export class TableroComponent implements OnInit {
   }
 
   mostrarGanador(){
+    
     console.log('Estado ganador: ',Number(this.turno))
           if(this.ganador===Number(this.turno)){
             swal.fire('Victoria','Haz Ganado','success');
           }else{
             swal.fire('Derrota','Haz perdido','warning');
+            this.turno=!this.turno;
           }
   }
   checkWin(current:string) :boolean{
