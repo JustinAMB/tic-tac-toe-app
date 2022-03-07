@@ -27,12 +27,6 @@ export class TableroComponent implements OnInit {
     return this.webSocket.socketStatus;
   }
   ngOnInit(): void {
-   this.webSocket.listen('jugada').subscribe(
-      (data) => {
-        const {posicion,jugador}=data as Data;
-        this.posiciones[posicion] = jugador;
-        this.turno = !this.turno;
-      })
     this.webSocket.listen('ganador').subscribe(
       (data:any) => {
 
@@ -41,23 +35,34 @@ export class TableroComponent implements OnInit {
           this.mostrarGanador();
         }
         
-      })  
+      }) 
+   this.webSocket.listen('jugada').subscribe(
+      (data) => {
+        const {posicion,jugador}=data as Data;
+        this.posiciones[posicion] = jugador;
+        if(this.ganador===-1){
+          this.turno = !this.turno;
+        }
+        
+      })
+     
   
   }
   cambiar(i:number) {
-    if(this.partidaService.created==this.turno){
+    if(this.partidaService.created===this.turno&& this.ganador===-1){
       const jugador=(this.turno)?'X':'O';
       this.webSocket.emit('jugada',{posicion:i,jugador,sala:this.partidaService.sala});
       this.posiciones[i]=jugador;
       this.ganador=this.checkWin(jugador)?Number(this.turno):-1;
-      const data={
-        sala:this.partidaService.sala,
-        ganador:this.ganador
-      }
-      this.webSocket.emit('ganador',data);
+      
       if(this.ganador===-1){
         this.turno = !this.turno;
       }else{
+        const data={
+          sala:this.partidaService.sala,
+          ganador:this.ganador
+        }
+        this.webSocket.emit('ganador',data);
         this.mostrarGanador();
       }
     }
@@ -65,7 +70,7 @@ export class TableroComponent implements OnInit {
 
 
   isDisabled(i:number):boolean{ 
-    return this.posiciones[i]!=' ' || this.ganador!=-1;
+    return this.posiciones[i]!=' ' ;
 
   }
 
