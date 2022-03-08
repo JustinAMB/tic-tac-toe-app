@@ -1,12 +1,17 @@
-<form class="container d-flex flex-column justify-content-center align-items-center">
-    <label for="name" class="d-block text-center m-3 fw-bold fs-2">Ingrese su nombre:</label>
+<div class="container">
+    <form class="d-flex flex-column justify-content-center align-items-center bg-height">
 
 
-    <input type="text" name="name" id="name" class="form-control " placeholder="" [(ngModel)]="name">
+
+        <label for="name" class="d-block text-center m-3 fw-bold fs-2">Ingrese su nombre:</label>
 
 
-    <div class="d-flex justify-content-center mt-3">
-        <button class="btn btn-primary" (click)="ingresar()">Ingresar</button>
-    </div>
+        <input type="text" name="name" id="name" class="form-control " placeholder="" [(ngModel)]="name">
 
-</form>
+
+        <div class="d-flex align-items-center justify-content-center mt-3">
+            <button class="btn btn-primary" (click)="ingresar()">Ingresar</button>
+        </div>
+
+    </form>
+</div>
