@@ -44,7 +44,15 @@ export class TableroComponent implements OnInit {
           this.turno = !this.turno;
         }
         
-      })
+      });
+      this.webSocket.listen('reiniciar').subscribe(
+        (data:any) => {
+          const reiniciar=data.reiniciar as boolean;
+          if(reiniciar===true){
+            this.reiniciarTablero();
+          }
+        }
+      );
      
   
   }
@@ -86,7 +94,16 @@ export class TableroComponent implements OnInit {
   }
   checkWin(current:string) :boolean{
     return this.winningCombinations.some(combination => {
-        return combination.every(i => this.posiciones[i].includes(current))
+      return combination.every(i => this.posiciones[i].includes(current))
     });
+  }
+  reiniciar(){
+    this.webSocket.emit('reiniciar',{reiniciar:true,sala:this.partidaService.sala});
+    this.reiniciarTablero();
+  }
+
+  reiniciarTablero(){
+    this.posiciones=[' ',' ',' ',' ',' ',' ',' ',' ',' '];
+    this.ganador=-1;
   }
 }

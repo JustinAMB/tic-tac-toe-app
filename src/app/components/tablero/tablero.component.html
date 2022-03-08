@@ -8,4 +8,7 @@
         <div class="img" [ngClass]="{'equis':posiciones[i]==='X','circulo':posiciones[i]==='O'}"   ></div>
     </button>
     </div>
+    <button class="d-block btn btn-primary rounded-pill" (click)="reiniciar()" *ngIf="ganador!==-1">
+        Reiniciar Partida
+    </button>
 </div>
