@@ -1,5 +1,8 @@
-.bg {
+.bg-color {
     background-color: #012340;
+}
+
+.bg-height {
     height: 100vh;
 }
 
@@ -7,7 +10,7 @@ h1 {
     color: #04D939;
 }
 
-button {
+.btns button {
     background-color: transparent;
     color: white;
     width: 7rem;
@@ -17,7 +20,7 @@ button {
     box-shadow: 2px 2px 2px 2px #76FF03, 4px 4px 4px 2px #CCFF90, 6px 6px 6px 2px #76FF03
 }
 
-button:hover {
+.bts button:hover {
     cursor: pointer;
 }
 
@@ -73,4 +76,8 @@ h2 span {
 .circulo {
     background-image: url("https://pybonacci.es/wp-content/uploads/2021/08/historia-de-un-circulo.png");
     filter: drop-shadow(0 0 0.75rem rgb(20, 220, 30));
+}
+
+.rounded-pill {
+    display: block;
 }

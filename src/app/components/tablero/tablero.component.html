@@ -1,14 +1,15 @@
-<div class="d-flex  flex-column justify-content-center align-items-center bg">
+<div class="d-flex  flex-column justify-content-center align-items-center bg-height bg-color">
+
     <h1>TIC-TAC-TOE WITH FRIENDS</h1>
     <h2><span [ngClass]="{'active':turno}">{{jugadores[0].nombre}}</span> vs <span [ngClass]="{'active':!turno}">{{jugadores[1].nombre}}</span></h2>
 
 
     <div class="btns">
         <button *ngFor="let posicion of posiciones;let i=index" (click)="cambiar(i)" [ngClass]="{'disabled':isDisabled(i)}" [disabled]="isDisabled(i)">
-        <div class="img" [ngClass]="{'equis':posiciones[i]==='X','circulo':posiciones[i]==='O'}"   ></div>
-    </button>
+            <div class="img" [ngClass]="{'equis':posiciones[i]==='X','circulo':posiciones[i]==='O'}"   ></div>
+        </button>
     </div>
-    <button class="d-block btn btn-primary rounded-pill" (click)="reiniciar()" *ngIf="ganador!==-1">
-        Reiniciar Partida
+    <button class="btn btn-primary rounded-pill  mt-3  mb-3" (click)="reiniciar()" *ngIf="ganador!==-1">
+            Reiniciar Partida
     </button>
 </div>

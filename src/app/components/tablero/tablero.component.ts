@@ -62,7 +62,9 @@ export class TableroComponent implements OnInit {
       this.webSocket.emit('jugada',{posicion:i,jugador,sala:this.partidaService.sala});
       this.posiciones[i]=jugador;
       this.ganador=this.checkWin(jugador)?Number(this.turno):-1;
-      
+      if(this.ganador===-1){
+        this.ganador=(this.hayEmpate())?2:-1;
+      }
       if(this.ganador===-1){
         this.turno = !this.turno;
       }else{
@@ -84,11 +86,14 @@ export class TableroComponent implements OnInit {
 
   mostrarGanador(){
     
-    console.log('Estado ganador: ',Number(this.turno))
+    if(this.ganador===2){
+      swal.fire('Empate','Ninguno ha ganado','warning');
+    }
+    
           if(this.ganador===Number(this.turno)){
             swal.fire('Victoria','Haz Ganado','success');
           }else{
-            swal.fire('Derrota','Haz perdido','warning');
+            swal.fire('Derrota','Haz perdido','error');
             this.turno=!this.turno;
           }
   }
@@ -105,5 +110,8 @@ export class TableroComponent implements OnInit {
   reiniciarTablero(){
     this.posiciones=[' ',' ',' ',' ',' ',' ',' ',' ',' '];
     this.ganador=-1;
+  }
+  hayEmpate():boolean{
+    return this.posiciones.every(p=>p!=' ');
   }
 }
